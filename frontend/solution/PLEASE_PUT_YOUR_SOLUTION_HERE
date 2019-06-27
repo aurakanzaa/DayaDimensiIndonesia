@@ -1,0 +1,42 @@
+<html>
+<head>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+</head>
+    <body>
+        <form action="">
+            <label for="jml_form" class="col-sm-2">Text
+            <input type="text" value="" id="isiText" onChange="createForm()">
+            </label><br><br><br>
+            <div id="newForm">
+            </div>
+        </form>
+    </body>
+<script type="text/javascript">
+    createForm=()=>{
+        var text = $("#isiText").val();
+        var jml = $('div#newForm div').length+1;
+        $("#newForm").append("<div id='div"+jml+"'>"+jml+".<span id='label"+jml+"'>"+text+" <input type='button' value='Update' onclick='aksi(event,"+jml+")'></span><input type='button' value='Delete' onclick='hapus(event,"+jml+")'></div>");
+        $("#isiText").val("");
+    }
+
+    function aksi(event,i){
+        event.preventDefault();
+        $("#label"+i).html("<input type='text' id='text"+i+"'/><input type='button' value='Submit' onclick='editdata(event,"+i+")'/>");
+    }
+    function editdata(event,i){
+        event.preventDefault();
+        var text = $("#text"+i).val();
+        $("#label"+i).html(text+" <input type='button' value='Update' onclick='aksi(event,"+i+")'></label> ");
+    }
+    hapus=(event,jml)=>{
+       event.preventDefault();
+       $("#div"+jml).remove();   
+       var all = $('div#newForm div').length; 
+       for(var i=jml;i<=jml;i++){
+           
+       }
+        
+    }
+</script>
+</html>
