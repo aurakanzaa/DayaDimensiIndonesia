@@ -7,7 +7,7 @@
     <body>
         <div class="container" style="padding:10%">
             
-            <form action="" >
+            <!-- <form action="" > -->
                 <div class="form-group" >
                         <label for="jml_form">Text</label>
                         <input type="text" value="" class="form-control" id="isiText" onChange="createForm()">
@@ -16,7 +16,7 @@
                     <div id="newForm">
                     </div>
                 </div>
-            </form>
+            <!-- </form> -->
             <input type="hidden" class="form-control" id="nomor" value="0" />
             </div>
         </div>
